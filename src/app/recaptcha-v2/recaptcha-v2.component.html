@@ -1,0 +1,10 @@
+<!-- <form #form="ngForm" (ngSubmit)="onSubmit()">
+    <re-captcha [(ngModel)]="tokenValue" name="recaptcha" siteKey=""
+     ngDefaultControl></re-captcha>
+    <button type="submit">Submit</button>
+</form> -->
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <re-captcha formControlName="recaptcha" siteKey="" (resolved)="onResolved($event || '')" ngDefaultControl></re-captcha>
+    <button type="submit">Submit</button>
+</form>
